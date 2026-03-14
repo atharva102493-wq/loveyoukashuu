@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Maalkin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #030303;
+            --accent: #ffcc00;
+            --love-red: #ff4d6d;
+            --text-color: #f0f0f0;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .scroll-container {
+            padding: 0 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Large atmospheric sections */
+        section {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            filter: blur(5px);
+            transition: all 1.5s ease;
+            margin-bottom: 5vh;
+        }
+
+        section.visible {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        .intro-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+        }
+
+        .main-text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            font-weight: 200;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 400;
+        }
+
+        .reason-box {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .vow-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2rem;
+            color: var(--love-red);
+            margin-top: 20px;
+        }
+
+        /* The Finale */
+        .finale {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .big-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: var(--love-red);
+            text-shadow: 0 0 30px var(--love-red);
+            margin: 20px 0;
+        }
+
+        .sunflower-rain {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-note {
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            opacity: 0.5;
+            margin-top: 50px;
+        }
+
+        /* Scroll indicator */
+        .indicator {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            opacity: 0.4;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.6; } }
+    </style>
+</head>
+<body>
+
+    <div class="indicator">SCROLL DOWN SLOWLY</div>
+
+    <div class="scroll-container">
+        <section class="visible">
+            <h1 class="intro-title">Kashuuu...</h1>
+            <p class="main-text">I love you. I know these three words aren't enough to express how I truly feel about you.</p>
+        </section>
+
+        <section>
+            <p class="main-text">I feel <span class="highlight">whole</span> when I'm with you—whether it's a video call, a voice call, or even just seeing your name pop up on chat.</p>
+        </section>
+
+        <section>
+            <p class="main-text">My love for you is evergrowing. I know for a fact that it’ll keep growing even after I’m in my grave.</p>
+        </section>
+
+        <section>
+            <p class="main-text">You are my <span class="highlight">little babyy Kashuuu</span> and I want to give you everything you deserve in this world.</p>
+        </section>
+
+        <section>
+            <div class="reason-box">
+                <p class="main-text">All the love, the care, the affection... every kiss, every meal, and all the pleasure in the world. You deserve it all.</p>
+            </div>
+        </section>
+
+        <section>
+            <p class="main-text">You are the reason I started seriously working on myself. <span class="highlight">It will always be you, Kash.</span></p>
+        </section>
+
+        <section>
+            <p class="main-text">No matter how hard things get, I will always want to be by your side, caring for you, loving you.</p>
+        </section>
+
+        <section>
+            <p class="main-text">You will always remain <span class="highlight">my Maalkin</span>.</p>
+        </section>
+
+        <section>
+            <p class="main-text">These are the reasons that drive me crazy about you every single day... and make me want to put a ring on your finger right away.</p>
+        </section>
+
+        <section class="finale">
+            <div class="sunflower-rain">🌻 🌻 🌻</div>
+            <div class="big-name">I LOVE YOU KASHUUUUU</div>
+            <div class="vow-text">Forever & Always</div>
+            <div class="footer-note">YOURS FOREVER</div>
+        </section>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
